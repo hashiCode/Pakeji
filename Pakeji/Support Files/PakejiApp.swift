@@ -13,7 +13,7 @@ struct PakejiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PackagesView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
