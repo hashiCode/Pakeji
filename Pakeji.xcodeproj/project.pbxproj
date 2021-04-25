@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F422636065400C73AA6 /* PakejiApp.swift */; };
+		FF534F452636065400C73AA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F442636065400C73AA6 /* ContentView.swift */; };
+		FF534F472636065500C73AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F462636065500C73AA6 /* Assets.xcassets */; };
+		FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F492636065500C73AA6 /* Preview Assets.xcassets */; };
+		FF534F4C2636065500C73AA6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F4B2636065500C73AA6 /* Persistence.swift */; };
+		FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF534F4D2636065500C73AA6 /* Pakeji.xcdatamodeld */; };
+		FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F592636065600C73AA6 /* PakejiTests.swift */; };
+		FF534F652636065600C73AA6 /* PakejiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F642636065600C73AA6 /* PakejiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF534F562636065600C73AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF534F372636065400C73AA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF534F3E2636065400C73AA6;
+			remoteInfo = Pakeji;
+		};
+		FF534F612636065600C73AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF534F372636065400C73AA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF534F3E2636065400C73AA6;
+			remoteInfo = Pakeji;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF534F3F2636065400C73AA6 /* Pakeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pakeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF534F422636065400C73AA6 /* PakejiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiApp.swift; sourceTree = "<group>"; };
+		FF534F442636065400C73AA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF534F462636065500C73AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF534F492636065500C73AA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF534F4B2636065500C73AA6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		FF534F4E2636065500C73AA6 /* Pakeji.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pakeji.xcdatamodel; sourceTree = "<group>"; };
+		FF534F502636065500C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF534F552636065600C73AA6 /* PakejiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PakejiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF534F592636065600C73AA6 /* PakejiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiTests.swift; sourceTree = "<group>"; };
+		FF534F5B2636065600C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF534F602636065600C73AA6 /* PakejiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PakejiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF534F642636065600C73AA6 /* PakejiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiUITests.swift; sourceTree = "<group>"; };
+		FF534F662636065600C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF534F3C2636065400C73AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF534F522636065600C73AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF534F5D2636065600C73AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF534F362636065400C73AA6 = {
+			isa = PBXGroup;
+			children = (
+				FF534F412636065400C73AA6 /* Pakeji */,
+				FF534F582636065600C73AA6 /* PakejiTests */,
+				FF534F632636065600C73AA6 /* PakejiUITests */,
+				FF534F402636065400C73AA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF534F402636065400C73AA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF534F3F2636065400C73AA6 /* Pakeji.app */,
+				FF534F552636065600C73AA6 /* PakejiTests.xctest */,
+				FF534F602636065600C73AA6 /* PakejiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF534F412636065400C73AA6 /* Pakeji */ = {
+			isa = PBXGroup;
+			children = (
+				FF534F422636065400C73AA6 /* PakejiApp.swift */,
+				FF534F442636065400C73AA6 /* ContentView.swift */,
+				FF534F462636065500C73AA6 /* Assets.xcassets */,
+				FF534F4B2636065500C73AA6 /* Persistence.swift */,
+				FF534F502636065500C73AA6 /* Info.plist */,
+				FF534F4D2636065500C73AA6 /* Pakeji.xcdatamodeld */,
+				FF534F482636065500C73AA6 /* Preview Content */,
+			);
+			path = Pakeji;
+			sourceTree = "<group>";
+		};
+		FF534F482636065500C73AA6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF534F492636065500C73AA6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF534F582636065600C73AA6 /* PakejiTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF534F592636065600C73AA6 /* PakejiTests.swift */,
+				FF534F5B2636065600C73AA6 /* Info.plist */,
+			);
+			path = PakejiTests;
+			sourceTree = "<group>";
+		};
+		FF534F632636065600C73AA6 /* PakejiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF534F642636065600C73AA6 /* PakejiUITests.swift */,
+				FF534F662636065600C73AA6 /* Info.plist */,
+			);
+			path = PakejiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF534F3E2636065400C73AA6 /* Pakeji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF534F692636065600C73AA6 /* Build configuration list for PBXNativeTarget "Pakeji" */;
+			buildPhases = (
+				FF534F3B2636065400C73AA6 /* Sources */,
+				FF534F3C2636065400C73AA6 /* Frameworks */,
+				FF534F3D2636065400C73AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pakeji;
+			productName = Pakeji;
+			productReference = FF534F3F2636065400C73AA6 /* Pakeji.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF534F542636065600C73AA6 /* PakejiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF534F6C2636065600C73AA6 /* Build configuration list for PBXNativeTarget "PakejiTests" */;
+			buildPhases = (
+				FF534F512636065600C73AA6 /* Sources */,
+				FF534F522636065600C73AA6 /* Frameworks */,
+				FF534F532636065600C73AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF534F572636065600C73AA6 /* PBXTargetDependency */,
+			);
+			name = PakejiTests;
+			productName = PakejiTests;
+			productReference = FF534F552636065600C73AA6 /* PakejiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF534F5F2636065600C73AA6 /* PakejiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF534F6F2636065600C73AA6 /* Build configuration list for PBXNativeTarget "PakejiUITests" */;
+			buildPhases = (
+				FF534F5C2636065600C73AA6 /* Sources */,
+				FF534F5D2636065600C73AA6 /* Frameworks */,
+				FF534F5E2636065600C73AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF534F622636065600C73AA6 /* PBXTargetDependency */,
+			);
+			name = PakejiUITests;
+			productName = PakejiUITests;
+			productReference = FF534F602636065600C73AA6 /* PakejiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF534F372636065400C73AA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					FF534F3E2636065400C73AA6 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					FF534F542636065600C73AA6 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FF534F3E2636065400C73AA6;
+					};
+					FF534F5F2636065600C73AA6 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FF534F3E2636065400C73AA6;
+					};
+				};
+			};
+			buildConfigurationList = FF534F3A2636065400C73AA6 /* Build configuration list for PBXProject "Pakeji" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF534F362636065400C73AA6;
+			productRefGroup = FF534F402636065400C73AA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF534F3E2636065400C73AA6 /* Pakeji */,
+				FF534F542636065600C73AA6 /* PakejiTests */,
+				FF534F5F2636065600C73AA6 /* PakejiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF534F3D2636065400C73AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */,
+				FF534F472636065500C73AA6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF534F532636065600C73AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF534F5E2636065600C73AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF534F3B2636065400C73AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF534F4C2636065500C73AA6 /* Persistence.swift in Sources */,
+				FF534F452636065400C73AA6 /* ContentView.swift in Sources */,
+				FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */,
+				FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF534F512636065600C73AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF534F5C2636065600C73AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF534F652636065600C73AA6 /* PakejiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF534F572636065600C73AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF534F3E2636065400C73AA6 /* Pakeji */;
+			targetProxy = FF534F562636065600C73AA6 /* PBXContainerItemProxy */;
+		};
+		FF534F622636065600C73AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF534F3E2636065400C73AA6 /* Pakeji */;
+			targetProxy = FF534F612636065600C73AA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FF534F672636065600C73AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF534F682636065600C73AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF534F6A2636065600C73AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Pakeji/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Pakeji/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.Pakeji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF534F6B2636065600C73AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Pakeji/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Pakeji/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.Pakeji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF534F6D2636065600C73AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PakejiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.PakejiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pakeji.app/Pakeji";
+			};
+			name = Debug;
+		};
+		FF534F6E2636065600C73AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PakejiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.PakejiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pakeji.app/Pakeji";
+			};
+			name = Release;
+		};
+		FF534F702636065600C73AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PakejiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.PakejiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pakeji;
+			};
+			name = Debug;
+		};
+		FF534F712636065600C73AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PakejiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.PakejiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pakeji;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF534F3A2636065400C73AA6 /* Build configuration list for PBXProject "Pakeji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF534F672636065600C73AA6 /* Debug */,
+				FF534F682636065600C73AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF534F692636065600C73AA6 /* Build configuration list for PBXNativeTarget "Pakeji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF534F6A2636065600C73AA6 /* Debug */,
+				FF534F6B2636065600C73AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF534F6C2636065600C73AA6 /* Build configuration list for PBXNativeTarget "PakejiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF534F6D2636065600C73AA6 /* Debug */,
+				FF534F6E2636065600C73AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF534F6F2636065600C73AA6 /* Build configuration list for PBXNativeTarget "PakejiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF534F702636065600C73AA6 /* Debug */,
+				FF534F712636065600C73AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FF534F4D2636065500C73AA6 /* Pakeji.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF534F4E2636065500C73AA6 /* Pakeji.xcdatamodel */,
+			);
+			currentVersion = FF534F4E2636065500C73AA6 /* Pakeji.xcdatamodel */;
+			path = Pakeji.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FF534F372636065400C73AA6 /* Project object */;
+}
