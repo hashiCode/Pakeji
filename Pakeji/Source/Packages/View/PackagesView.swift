@@ -9,7 +9,12 @@ import SwiftUI
 
 struct PackagesView: View {
     var body: some View {
-        Text("Packages View")
+        NavigationView {
+                Text("Packeges View")
+            .navigationTitle(LocalizedStringKey("packages.navigationView.title"))
+            .navigationBarTitleDisplayMode(.large)
+        }
+        
     }
 }
 
