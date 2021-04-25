@@ -15,6 +15,7 @@
 		FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF534F4D2636065500C73AA6 /* Pakeji.xcdatamodeld */; };
 		FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F592636065600C73AA6 /* PakejiTests.swift */; };
 		FF534F652636065600C73AA6 /* PakejiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F642636065600C73AA6 /* PakejiUITests.swift */; };
+		FFCF7CF9263625AE005F6C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFCF7CFB263625AE005F6C0A /* Localizable.strings */; };
 		FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCA68D2636146700B3A36F /* PackagesView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		FF534F602636065600C73AA6 /* PakejiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PakejiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF534F642636065600C73AA6 /* PakejiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiUITests.swift; sourceTree = "<group>"; };
 		FF534F662636065600C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFCF7CFA263625AE005F6C0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FFCF7CFC263625B2005F6C0A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FFDCA68D2636146700B3A36F /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +146,7 @@
 				FF534F422636065400C73AA6 /* PakejiApp.swift */,
 				FF534F502636065500C73AA6 /* Info.plist */,
 				FF534F4B2636065500C73AA6 /* Persistence.swift */,
+				FFCF7CFB263625AE005F6C0A /* Localizable.strings */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = FF534F362636065400C73AA6;
 			productRefGroup = FF534F402636065400C73AA6 /* Products */;
@@ -275,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */,
+				FFCF7CF9263625AE005F6C0A /* Localizable.strings in Resources */,
 				FF534F472636065500C73AA6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +344,18 @@
 			targetProxy = FF534F612636065600C73AA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFCF7CFB263625AE005F6C0A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFCF7CFA263625AE005F6C0A /* en */,
+				FFCF7CFC263625B2005F6C0A /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FF534F672636065600C73AA6 /* Debug */ = {

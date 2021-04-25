@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Pakeji
+
+  Created by Scott Takahashi on 25/04/21.
+  
+*/
+
+"packages.navigationView.title" = "Packages";
