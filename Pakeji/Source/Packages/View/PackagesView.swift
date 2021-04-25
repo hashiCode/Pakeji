@@ -10,9 +10,22 @@ import SwiftUI
 struct PackagesView: View {
     var body: some View {
         NavigationView {
-                Text("Packeges View")
-            .navigationTitle(LocalizedStringKey("packages.navigationView.title"))
-            .navigationBarTitleDisplayMode(.large)
+            Text("Packeges View")
+                .navigationTitle(LocalizedStringKey("packages.navigationView.title"))
+                .navigationBarTitleDisplayMode(.large)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {print("add pack")}, label: {
+                            Image(systemName: "plus")
+                        })
+                    }
+                }
+            
+        }
+        .toolbar {
+            ToolbarItem(placement: .status) {
+                Text("0 packages") //TODO: placeholder. show packages saved on coredata db
+            }
         }
         
     }
