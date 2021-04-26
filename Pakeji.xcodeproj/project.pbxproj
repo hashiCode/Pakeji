@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F422636065400C73AA6 /* PakejiApp.swift */; };
-		FF534F452636065400C73AA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F442636065400C73AA6 /* ContentView.swift */; };
 		FF534F472636065500C73AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F462636065500C73AA6 /* Assets.xcassets */; };
 		FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F492636065500C73AA6 /* Preview Assets.xcassets */; };
 		FF534F4C2636065500C73AA6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F4B2636065500C73AA6 /* Persistence.swift */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		FF534F3F2636065400C73AA6 /* Pakeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pakeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF534F422636065400C73AA6 /* PakejiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiApp.swift; sourceTree = "<group>"; };
-		FF534F442636065400C73AA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF534F462636065500C73AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF534F492636065500C73AA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF534F4B2636065500C73AA6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			children = (
 				FFDCA68A263613DE00B3A36F /* Source */,
 				FFDCA67D26360D3A00B3A36F /* Support Files */,
-				FF534F442636065400C73AA6 /* ContentView.swift */,
 			);
 			path = Pakeji;
 			sourceTree = "<group>";
@@ -307,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF534F4C2636065500C73AA6 /* Persistence.swift in Sources */,
-				FF534F452636065400C73AA6 /* ContentView.swift in Sources */,
 				FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */,
 				FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */,
 				FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */,
