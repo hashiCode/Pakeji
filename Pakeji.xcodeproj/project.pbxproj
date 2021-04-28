@@ -88,12 +88,20 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		1354B7082638DCDF00DE987B /* Entity */ = {
+		1354B7082638DCDF00DE987B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				1354B7092638DCF900DE987B /* PackageEntity.swift */,
 			);
-			path = Entity;
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		1354B70E2638DE5500DE987B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				FFDCA68B2636142F00B3A36F /* Packages */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		FF534F362636065400C73AA6 = {
@@ -168,8 +176,8 @@
 		FFDCA68A263613DE00B3A36F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1354B7082638DCDF00DE987B /* Entity */,
-				FFDCA68B2636142F00B3A36F /* Packages */,
+				1354B70E2638DE5500DE987B /* Features */,
+				1354B7082638DCDF00DE987B /* Entities */,
 			);
 			path = Source;
 			sourceTree = "<group>";
