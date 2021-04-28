@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7092638DCF900DE987B /* PackageEntity.swift */; };
+		1354B7262638E2D900DE987B /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7252638E2D900DE987B /* Package.swift */; };
 		FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F422636065400C73AA6 /* PakejiApp.swift */; };
 		FF534F472636065500C73AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F462636065500C73AA6 /* Assets.xcassets */; };
 		FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F492636065500C73AA6 /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1354B7092638DCF900DE987B /* PackageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntity.swift; sourceTree = "<group>"; };
+		1354B7252638E2D900DE987B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		FF534F3F2636065400C73AA6 /* Pakeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pakeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF534F422636065400C73AA6 /* PakejiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiApp.swift; sourceTree = "<group>"; };
 		FF534F462636065500C73AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 				FFDCA68B2636142F00B3A36F /* Packages */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		1354B7242638E2C700DE987B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1354B7252638E2D900DE987B /* Package.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FF534F362636065400C73AA6 = {
@@ -176,6 +186,7 @@
 		FFDCA68A263613DE00B3A36F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1354B7242638E2C700DE987B /* Models */,
 				1354B70E2638DE5500DE987B /* Features */,
 				1354B7082638DCDF00DE987B /* Entities */,
 			);
@@ -330,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1354B7262638E2D900DE987B /* Package.swift in Sources */,
 				FF534F4C2636065500C73AA6 /* Persistence.swift in Sources */,
 				FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */,
 				FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */,
