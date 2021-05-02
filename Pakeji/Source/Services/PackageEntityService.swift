@@ -33,8 +33,8 @@ protocol PackageEntityService {
 class PackageEntityServiceImpl: PackageEntityService {
     
     
-    var savedPackageSubject: PassthroughSubject<PackageEntity, PackageEntityServiceError> = PassthroughSubject()
-    var findPackagesSubject: PassthroughSubject<[PackageEntity], PackageEntityServiceError> = PassthroughSubject()
+    private(set) var savedPackageSubject: PassthroughSubject<PackageEntity, PackageEntityServiceError> = PassthroughSubject()
+    private(set) var findPackagesSubject: PassthroughSubject<[PackageEntity], PackageEntityServiceError> = PassthroughSubject()
     
     
     func save(package: Package) {
