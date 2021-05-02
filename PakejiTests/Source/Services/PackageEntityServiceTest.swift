@@ -27,7 +27,7 @@ class PackageEntityServiceTest: XCTestCase {
     func testSavePackage() throws {
         let expectation = XCTestExpectation(description: "Save package correctly")
         let packageToBeSaved = Package(id: nil, name: "test", notes: "some test")
-        sut.savedPackage.sink { (_) in
+        sut.savedPackageSubject.sink { (_) in
             
         } receiveValue: { (package) in
             XCTAssertNotNil(package.id)
@@ -40,6 +40,78 @@ class PackageEntityServiceTest: XCTestCase {
         wait(for: [expectation], timeout: 3.0)
     }
     
+    func testFindAllPackage() throws {
+        let expectation = XCTestExpectation(description: "Find packages correctly")
+        
+        let context = PersistenceController.shared.container.viewContext
+        let package = PackageEntity(context: context)
+        package.id = UUID.init()
+        package.name = "name"
+        package.notes = "notes"
+        
+        do {
+            try context.save()
+        } catch {
+            XCTFail("problem on test setup")
+        }
+        
+        sut.findPackagesSubject.sink { (_) in
+            
+        } receiveValue: { (packages) in
+            XCTAssertEqual(1, packages.count)
+            let packageResult = packages[0]
+            XCTAssertEqual(package.id, packageResult.id)
+            XCTAssertEqual(package.name, packageResult.name)
+            XCTAssertEqual(package.notes, packageResult.notes)
+            expectation.fulfill()
+        }.store(in: &anyCancelable)
+        
+        self.sut.findPackages(predicate: nil)
+        
+        wait(for: [expectation], timeout: 3.0)
+    }
+    
+    func testFindPackageGivenPredicate() throws {
+        let expectation = XCTestExpectation(description: "Find packages correctly")
+        
+        let context = PersistenceController.shared.container.viewContext
+        let package = PackageEntity(context: context)
+        package.id = UUID.init()
+        package.name = "name"
+        package.notes = "notes"
+        
+        let otherPackage = PackageEntity(context: context)
+        otherPackage.id = UUID.init()
+        otherPackage.name = "other"
+        otherPackage.notes = "other notes"
+        
+        do {
+            try context.save()
+        } catch {
+            XCTFail("problem on test setup")
+        }
+        
+        sut.findPackagesSubject.sink { (_) in
+            
+        } receiveValue: { (packages) in
+            XCTAssertEqual(1, packages.count)
+            let packageResult = packages[0]
+            XCTAssertEqual(package.id, packageResult.id)
+            XCTAssertEqual(package.name, packageResult.name)
+            XCTAssertEqual(package.notes, packageResult.notes)
+            expectation.fulfill()
+        }.store(in: &anyCancelable)
+        
+        self.sut.findPackages(predicate: NSPredicate(format: "name == %@", String(package.name)))
+        
+        wait(for: [expectation], timeout: 3.0)
+    }
+    
+    
+}
+
+//MARK: helper functions
+extension PackageEntityServiceTest {
     private func cleanDB(){
         let context = PersistenceController.shared.container.viewContext
         let request = PackageEntity.fetchRequest()
@@ -53,5 +125,4 @@ class PackageEntityServiceTest: XCTestCase {
            fatalError("Unable to clean db test")
         }
     }
-
 }
