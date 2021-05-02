@@ -16,9 +16,17 @@ struct PackagesView: View {
         self.viewModel = packagesViewModel as! PackagesViewModel
     }
     
+    func contentView() -> AnyView {
+        if viewModel.packages.count == 0 {
+            return AnyView(PackagesEmptyStateView())
+        }
+//        TODO implement view to show packages
+        return AnyView(EmptyView())
+    }
+    
     var body: some View {
         NavigationView {
-            Text("Packeges View")
+            self.contentView()
                 .navigationTitle("packages.navigationView.title".localized())
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {

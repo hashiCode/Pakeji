@@ -16,6 +16,7 @@
 		FF2720D9263F0FE900EA3683 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = FF2720D8263F0FE900EA3683 /* SnapshotTesting */; };
 		FF2720DF263F10AC00EA3683 /* PackagesViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720DE263F10AC00EA3683 /* PackagesViewTest.swift */; };
 		FF2720E8263F125300EA3683 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FF2720E7263F125300EA3683 /* ComposableArchitecture */; };
+		FF2720F0263F18BC00EA3683 /* PackagesEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720EF263F18BC00EA3683 /* PackagesEmptyStateView.swift */; };
 		FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F422636065400C73AA6 /* PakejiApp.swift */; };
 		FF534F472636065500C73AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F462636065500C73AA6 /* Assets.xcassets */; };
 		FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F492636065500C73AA6 /* Preview Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityServiceMock.swift; sourceTree = "<group>"; };
 		FF2720CF263EFBCD00EA3683 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		FF2720DE263F10AC00EA3683 /* PackagesViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewTest.swift; sourceTree = "<group>"; };
+		FF2720EF263F18BC00EA3683 /* PackagesEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesEmptyStateView.swift; sourceTree = "<group>"; };
 		FF534F3F2636065400C73AA6 /* Pakeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pakeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF534F422636065400C73AA6 /* PakejiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiApp.swift; sourceTree = "<group>"; };
 		FF534F462636065500C73AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				FFDCA68D2636146700B3A36F /* PackagesView.swift */,
+				FF2720EF263F18BC00EA3683 /* PackagesEmptyStateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */,
 				FFC40F5F263E5E8800ED4137 /* PackageEntityService.swift in Sources */,
 				FF2720B3263EEADB00EA3683 /* PackagesViewModelProtocol.swift in Sources */,
+				FF2720F0263F18BC00EA3683 /* PackagesEmptyStateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
