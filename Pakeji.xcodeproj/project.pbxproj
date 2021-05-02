@@ -22,8 +22,6 @@
 		FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F492636065500C73AA6 /* Preview Assets.xcassets */; };
 		FF534F4C2636065500C73AA6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F4B2636065500C73AA6 /* Persistence.swift */; };
 		FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF534F4D2636065500C73AA6 /* Pakeji.xcdatamodeld */; };
-		FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F592636065600C73AA6 /* PakejiTests.swift */; };
-		FF534F652636065600C73AA6 /* PakejiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F642636065600C73AA6 /* PakejiUITests.swift */; };
 		FFC40F5F263E5E8800ED4137 /* PackageEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC40F5E263E5E8800ED4137 /* PackageEntityService.swift */; };
 		FFC40F69263E667100ED4137 /* PackageEntityServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC40F68263E667100ED4137 /* PackageEntityServiceTest.swift */; };
 		FFCF7CF9263625AE005F6C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFCF7CFB263625AE005F6C0A /* Localizable.strings */; };
@@ -32,13 +30,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		FF534F562636065600C73AA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FF534F372636065400C73AA6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FF534F3E2636065400C73AA6;
-			remoteInfo = Pakeji;
-		};
-		FF534F612636065600C73AA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF534F372636065400C73AA6 /* Project object */;
 			proxyType = 1;
@@ -64,11 +55,7 @@
 		FF534F4E2636065500C73AA6 /* Pakeji.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pakeji.xcdatamodel; sourceTree = "<group>"; };
 		FF534F502636065500C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF534F552636065600C73AA6 /* PakejiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PakejiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF534F592636065600C73AA6 /* PakejiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiTests.swift; sourceTree = "<group>"; };
 		FF534F5B2636065600C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF534F602636065600C73AA6 /* PakejiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PakejiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF534F642636065600C73AA6 /* PakejiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiUITests.swift; sourceTree = "<group>"; };
-		FF534F662636065600C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC40F5E263E5E8800ED4137 /* PackageEntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityService.swift; sourceTree = "<group>"; };
 		FFC40F68263E667100ED4137 /* PackageEntityServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityServiceTest.swift; sourceTree = "<group>"; };
 		FFCF7CFA263625AE005F6C0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -90,13 +77,6 @@
 			files = (
 				FF2720E8263F125300EA3683 /* ComposableArchitecture in Frameworks */,
 				FF2720D9263F0FE900EA3683 /* SnapshotTesting in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF534F5D2636065600C73AA6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +169,6 @@
 			children = (
 				FF534F412636065400C73AA6 /* Pakeji */,
 				FF534F582636065600C73AA6 /* PakejiTests */,
-				FF534F632636065600C73AA6 /* PakejiUITests */,
 				FF534F402636065400C73AA6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -199,7 +178,6 @@
 			children = (
 				FF534F3F2636065400C73AA6 /* Pakeji.app */,
 				FF534F552636065600C73AA6 /* PakejiTests.xctest */,
-				FF534F602636065600C73AA6 /* PakejiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,19 +204,9 @@
 			children = (
 				FF2720C2263EEE8E00EA3683 /* Mocks */,
 				FFC40F66263E664700ED4137 /* Source */,
-				FF534F592636065600C73AA6 /* PakejiTests.swift */,
 				FF534F5B2636065600C73AA6 /* Info.plist */,
 			);
 			path = PakejiTests;
-			sourceTree = "<group>";
-		};
-		FF534F632636065600C73AA6 /* PakejiUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FF534F642636065600C73AA6 /* PakejiUITests.swift */,
-				FF534F662636065600C73AA6 /* Info.plist */,
-			);
-			path = PakejiUITests;
 			sourceTree = "<group>";
 		};
 		FFC40F5D263E5E5D00ED4137 /* Services */ = {
@@ -352,24 +320,6 @@
 			productReference = FF534F552636065600C73AA6 /* PakejiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FF534F5F2636065600C73AA6 /* PakejiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FF534F6F2636065600C73AA6 /* Build configuration list for PBXNativeTarget "PakejiUITests" */;
-			buildPhases = (
-				FF534F5C2636065600C73AA6 /* Sources */,
-				FF534F5D2636065600C73AA6 /* Frameworks */,
-				FF534F5E2636065600C73AA6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FF534F622636065600C73AA6 /* PBXTargetDependency */,
-			);
-			name = PakejiUITests;
-			productName = PakejiUITests;
-			productReference = FF534F602636065600C73AA6 /* PakejiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -383,10 +333,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					FF534F542636065600C73AA6 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = FF534F3E2636065400C73AA6;
-					};
-					FF534F5F2636065600C73AA6 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = FF534F3E2636065400C73AA6;
 					};
@@ -412,7 +358,6 @@
 			targets = (
 				FF534F3E2636065400C73AA6 /* Pakeji */,
 				FF534F542636065600C73AA6 /* PakejiTests */,
-				FF534F5F2636065600C73AA6 /* PakejiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -429,13 +374,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FF534F532636065600C73AA6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF534F5E2636065600C73AA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -466,19 +404,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */,
 				FF2720C4263EEF2700EA3683 /* PackageEntityServiceMock.swift in Sources */,
 				FFC40F69263E667100ED4137 /* PackageEntityServiceTest.swift in Sources */,
 				FF2720DF263F10AC00EA3683 /* PackagesViewTest.swift in Sources */,
 				FF2720BB263EEE3400EA3683 /* PackagesViewModelTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF534F5C2636065600C73AA6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF534F652636065600C73AA6 /* PakejiUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,11 +418,6 @@
 			isa = PBXTargetDependency;
 			target = FF534F3E2636065400C73AA6 /* Pakeji */;
 			targetProxy = FF534F562636065600C73AA6 /* PBXContainerItemProxy */;
-		};
-		FF534F622636065600C73AA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FF534F3E2636065400C73AA6 /* Pakeji */;
-			targetProxy = FF534F612636065600C73AA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -710,44 +634,6 @@
 			};
 			name = Release;
 		};
-		FF534F702636065600C73AA6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PakejiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.PakejiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pakeji;
-			};
-			name = Debug;
-		};
-		FF534F712636065600C73AA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PakejiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hashiCode.PakejiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pakeji;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -774,15 +660,6 @@
 			buildConfigurations = (
 				FF534F6D2636065600C73AA6 /* Debug */,
 				FF534F6E2636065600C73AA6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FF534F6F2636065600C73AA6 /* Build configuration list for PBXNativeTarget "PakejiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FF534F702636065600C73AA6 /* Debug */,
-				FF534F712636065600C73AA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
