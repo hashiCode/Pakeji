@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct PackagesView: View {
+    
+    @ObservedObject
+    private var viewModel: PackagesViewModel
+    
+    init(packagesViewModel: PackagesViewModelProtocol) {
+        self.viewModel = packagesViewModel as! PackagesViewModel
+    }
+    
     var body: some View {
         NavigationView {
             Text("Packeges View")
-                .navigationTitle(LocalizedStringKey("packages.navigationView.title"))
+                .navigationTitle("packages.navigationView.title".localized())
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -24,15 +32,27 @@ struct PackagesView: View {
         }
         .toolbar {
             ToolbarItem(placement: .status) {
-                Text("0 packages") //TODO: placeholder. show packages saved on coredata db
+                Text(String(format: "packages.toolbar.totalPackages".localized(), self.viewModel.packages.count))
             }
         }
         
     }
 }
 
-struct PackagesView_Previews: PreviewProvider {
-    static var previews: some View {
-        PackagesView()
+#if DEBUG
+class PackagesViewModelPreview: PackagesViewModelProtocol {
+    
+    var packages: [Package] = []
+    
+    func findAllPackages() {
+        
     }
 }
+
+struct PackagesView_Previews: PreviewProvider {
+    static var previews: some View {
+        PackagesView(packagesViewModel: PackagesViewModelPreview())
+    }
+}
+
+#endif

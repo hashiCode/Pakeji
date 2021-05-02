@@ -12,6 +12,7 @@
 		FF2720B3263EEADB00EA3683 /* PackagesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720B2263EEADB00EA3683 /* PackagesViewModelProtocol.swift */; };
 		FF2720BB263EEE3400EA3683 /* PackagesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720BA263EEE3400EA3683 /* PackagesViewModelTest.swift */; };
 		FF2720C4263EEF2700EA3683 /* PackageEntityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */; };
+		FF2720D0263EFBCD00EA3683 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720CF263EFBCD00EA3683 /* String+Localizable.swift */; };
 		FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F422636065400C73AA6 /* PakejiApp.swift */; };
 		FF534F472636065500C73AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F462636065500C73AA6 /* Assets.xcassets */; };
 		FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F492636065500C73AA6 /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		FF2720B2263EEADB00EA3683 /* PackagesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModelProtocol.swift; sourceTree = "<group>"; };
 		FF2720BA263EEE3400EA3683 /* PackagesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModelTest.swift; sourceTree = "<group>"; };
 		FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityServiceMock.swift; sourceTree = "<group>"; };
+		FF2720CF263EFBCD00EA3683 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		FF534F3F2636065400C73AA6 /* Pakeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pakeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF534F422636065400C73AA6 /* PakejiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiApp.swift; sourceTree = "<group>"; };
 		FF534F462636065500C73AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		FF2720CE263EFBB700EA3683 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF2720CF263EFBCD00EA3683 /* String+Localizable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FF534F362636065400C73AA6 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +270,7 @@
 				FFC40F5D263E5E5D00ED4137 /* Services */,
 				1354B7242638E2C700DE987B /* Models */,
 				1354B7082638DCDF00DE987B /* Entities */,
+				FF2720CE263EFBB700EA3683 /* Extensions */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -417,6 +428,7 @@
 				FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */,
 				FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */,
 				FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */,
+				FF2720D0263EFBCD00EA3683 /* String+Localizable.swift in Sources */,
 				1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */,
 				FFC40F5F263E5E8800ED4137 /* PackageEntityService.swift in Sources */,
 				FF2720B3263EEADB00EA3683 /* PackagesViewModelProtocol.swift in Sources */,

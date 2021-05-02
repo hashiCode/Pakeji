@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol PackagesViewModelProtocol: ObservableObject {
+protocol PackagesViewModelProtocol {
     
     var packages: [Package] { get }
     
@@ -16,12 +16,12 @@ protocol PackagesViewModelProtocol: ObservableObject {
     
 }
 
-class PackagesViewModel: PackagesViewModelProtocol {
+class PackagesViewModel: PackagesViewModelProtocol, ObservableObject{
     
     @Published private(set) var packages: [Package] = []
     
     private let packageEntityService: PackageEntityService
-    var anyCancelable = Set<AnyCancellable>()
+    private var anyCancelable = Set<AnyCancellable>()
     
     init(packageEntityService: PackageEntityService) {
         self.packageEntityService = packageEntityService

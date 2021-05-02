@@ -7,3 +7,4 @@
 */
 
 "packages.navigationView.title" = "Pacotes";
+"packages.toolbar.totalPackages" = "%d pacote(s).";
