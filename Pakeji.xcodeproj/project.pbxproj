@@ -87,13 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1354B7072638DB2E00DE987B /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		1354B7082638DCDF00DE987B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,9 +208,9 @@
 		FFDCA68A263613DE00B3A36F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1354B70E2638DE5500DE987B /* Features */,
 				FFC40F5D263E5E5D00ED4137 /* Services */,
 				1354B7242638E2C700DE987B /* Models */,
-				1354B70E2638DE5500DE987B /* Features */,
 				1354B7082638DCDF00DE987B /* Entities */,
 			);
 			path = Source;
@@ -226,7 +219,6 @@
 		FFDCA68B2636142F00B3A36F /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				1354B7072638DB2E00DE987B /* Service */,
 				FFDCA68C2636143C00B3A36F /* View */,
 			);
 			path = Packages;
