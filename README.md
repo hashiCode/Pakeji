@@ -1,1 +1,1 @@
-# Pakeji
+# Pakeji [![Build Status](https://travis-ci.com/hashiCode/Pakeji.svg?branch=develop)](https://travis-ci.com/hashiCode/Pakeji) [![codecov](https://codecov.io/gh/hashiCode/Pakeji/branch/develop/graph/badge.svg)](https://codecov.io/gh/hashiCode/Pakeji)
