@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7092638DCF900DE987B /* PackageEntity.swift */; };
 		1354B7262638E2D900DE987B /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7252638E2D900DE987B /* Package.swift */; };
+		FF2720B3263EEADB00EA3683 /* PackagesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720B2263EEADB00EA3683 /* PackagesViewModelProtocol.swift */; };
+		FF2720BB263EEE3400EA3683 /* PackagesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720BA263EEE3400EA3683 /* PackagesViewModelTest.swift */; };
+		FF2720C4263EEF2700EA3683 /* PackageEntityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */; };
 		FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F422636065400C73AA6 /* PakejiApp.swift */; };
 		FF534F472636065500C73AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F462636065500C73AA6 /* Assets.xcassets */; };
 		FF534F4A2636065500C73AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF534F492636065500C73AA6 /* Preview Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		1354B7092638DCF900DE987B /* PackageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntity.swift; sourceTree = "<group>"; };
 		1354B7252638E2D900DE987B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		FF2720B2263EEADB00EA3683 /* PackagesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModelProtocol.swift; sourceTree = "<group>"; };
+		FF2720BA263EEE3400EA3683 /* PackagesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModelTest.swift; sourceTree = "<group>"; };
+		FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityServiceMock.swift; sourceTree = "<group>"; };
 		FF534F3F2636065400C73AA6 /* Pakeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pakeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF534F422636065400C73AA6 /* PakejiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiApp.swift; sourceTree = "<group>"; };
 		FF534F462636065500C73AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +117,46 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FF2720B1263EEABC00EA3683 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF2720B2263EEADB00EA3683 /* PackagesViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF2720B7263EEE1300EA3683 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				FF2720B8263EEE1A00EA3683 /* Packages */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		FF2720B8263EEE1A00EA3683 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				FF2720B9263EEE2000EA3683 /* ViewModel */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		FF2720B9263EEE2000EA3683 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF2720BA263EEE3400EA3683 /* PackagesViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF2720C2263EEE8E00EA3683 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		FF534F362636065400C73AA6 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +197,7 @@
 		FF534F582636065600C73AA6 /* PakejiTests */ = {
 			isa = PBXGroup;
 			children = (
+				FF2720C2263EEE8E00EA3683 /* Mocks */,
 				FFC40F66263E664700ED4137 /* Source */,
 				FF534F592636065600C73AA6 /* PakejiTests.swift */,
 				FF534F5B2636065600C73AA6 /* Info.plist */,
@@ -178,6 +225,7 @@
 		FFC40F66263E664700ED4137 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FF2720B7263EEE1300EA3683 /* Features */,
 				FFC40F67263E665100ED4137 /* Services */,
 			);
 			path = Source;
@@ -219,6 +267,7 @@
 		FFDCA68B2636142F00B3A36F /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				FF2720B1263EEABC00EA3683 /* ViewModel */,
 				FFDCA68C2636143C00B3A36F /* View */,
 			);
 			path = Packages;
@@ -370,6 +419,7 @@
 				FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */,
 				1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */,
 				FFC40F5F263E5E8800ED4137 /* PackageEntityService.swift in Sources */,
+				FF2720B3263EEADB00EA3683 /* PackagesViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +428,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */,
+				FF2720C4263EEF2700EA3683 /* PackageEntityServiceMock.swift in Sources */,
 				FFC40F69263E667100ED4137 /* PackageEntityServiceTest.swift in Sources */,
+				FF2720BB263EEE3400EA3683 /* PackagesViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
