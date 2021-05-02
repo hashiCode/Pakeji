@@ -16,6 +16,8 @@
 		FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF534F4D2636065500C73AA6 /* Pakeji.xcdatamodeld */; };
 		FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F592636065600C73AA6 /* PakejiTests.swift */; };
 		FF534F652636065600C73AA6 /* PakejiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF534F642636065600C73AA6 /* PakejiUITests.swift */; };
+		FFC40F5F263E5E8800ED4137 /* PackageEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC40F5E263E5E8800ED4137 /* PackageEntityService.swift */; };
+		FFC40F69263E667100ED4137 /* PackageEntityServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC40F68263E667100ED4137 /* PackageEntityServiceTest.swift */; };
 		FFCF7CF9263625AE005F6C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFCF7CFB263625AE005F6C0A /* Localizable.strings */; };
 		FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCA68D2636146700B3A36F /* PackagesView.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		FF534F602636065600C73AA6 /* PakejiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PakejiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF534F642636065600C73AA6 /* PakejiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PakejiUITests.swift; sourceTree = "<group>"; };
 		FF534F662636065600C73AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFC40F5E263E5E8800ED4137 /* PackageEntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityService.swift; sourceTree = "<group>"; };
+		FFC40F68263E667100ED4137 /* PackageEntityServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityServiceTest.swift; sourceTree = "<group>"; };
 		FFCF7CFA263625AE005F6C0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FFCF7CFC263625B2005F6C0A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FFDCA68D2636146700B3A36F /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		FF534F582636065600C73AA6 /* PakejiTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFC40F66263E664700ED4137 /* Source */,
 				FF534F592636065600C73AA6 /* PakejiTests.swift */,
 				FF534F5B2636065600C73AA6 /* Info.plist */,
 			);
@@ -167,6 +172,30 @@
 				FF534F662636065600C73AA6 /* Info.plist */,
 			);
 			path = PakejiUITests;
+			sourceTree = "<group>";
+		};
+		FFC40F5D263E5E5D00ED4137 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFC40F5E263E5E8800ED4137 /* PackageEntityService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FFC40F66263E664700ED4137 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FFC40F67263E665100ED4137 /* Services */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FFC40F67263E665100ED4137 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFC40F68263E667100ED4137 /* PackageEntityServiceTest.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FFDCA67D26360D3A00B3A36F /* Support Files */ = {
@@ -186,6 +215,7 @@
 		FFDCA68A263613DE00B3A36F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FFC40F5D263E5E5D00ED4137 /* Services */,
 				1354B7242638E2C700DE987B /* Models */,
 				1354B70E2638DE5500DE987B /* Features */,
 				1354B7082638DCDF00DE987B /* Entities */,
@@ -347,6 +377,7 @@
 				FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */,
 				FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */,
 				1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */,
+				FFC40F5F263E5E8800ED4137 /* PackageEntityService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF534F5A2636065600C73AA6 /* PakejiTests.swift in Sources */,
+				FFC40F69263E667100ED4137 /* PackageEntityServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

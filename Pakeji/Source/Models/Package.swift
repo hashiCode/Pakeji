@@ -8,7 +8,7 @@
 import Foundation
 
 struct Package {
-    var id: UUID
+    var id: UUID?
     var name: String
     var notes: String
 }
