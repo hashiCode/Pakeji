@@ -50,16 +50,6 @@
                ReferencedContainer = "container:Pakeji.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF534F5F2636065600C73AA6"
-               BuildableName = "PakejiUITests.xctest"
-               BlueprintName = "PakejiUITests"
-               ReferencedContainer = "container:Pakeji.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
