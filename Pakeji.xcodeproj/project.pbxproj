@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7092638DCF900DE987B /* PackageEntity.swift */; };
 		1354B7262638E2D900DE987B /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7252638E2D900DE987B /* Package.swift */; };
+		FF12C232263F4B88003807F8 /* NewPackageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12C231263F4B88003807F8 /* NewPackageView.swift */; };
+		FF12C236263F899C003807F8 /* NewPackageViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12C235263F899C003807F8 /* NewPackageViewTest.swift */; };
 		FF2720B3263EEADB00EA3683 /* PackagesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720B2263EEADB00EA3683 /* PackagesViewModelProtocol.swift */; };
 		FF2720BB263EEE3400EA3683 /* PackagesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720BA263EEE3400EA3683 /* PackagesViewModelTest.swift */; };
 		FF2720C4263EEF2700EA3683 /* PackageEntityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		1354B7092638DCF900DE987B /* PackageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntity.swift; sourceTree = "<group>"; };
 		1354B7252638E2D900DE987B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		FF12C231263F4B88003807F8 /* NewPackageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPackageView.swift; sourceTree = "<group>"; };
+		FF12C235263F899C003807F8 /* NewPackageViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPackageViewTest.swift; sourceTree = "<group>"; };
 		FF2720B2263EEADB00EA3683 /* PackagesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModelProtocol.swift; sourceTree = "<group>"; };
 		FF2720BA263EEE3400EA3683 /* PackagesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModelTest.swift; sourceTree = "<group>"; };
 		FF2720C3263EEF2700EA3683 /* PackageEntityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityServiceMock.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FF2720DE263F10AC00EA3683 /* PackagesViewTest.swift */,
+				FF12C235263F899C003807F8 /* NewPackageViewTest.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			children = (
 				FFDCA68D2636146700B3A36F /* PackagesView.swift */,
 				FF2720EF263F18BC00EA3683 /* PackagesEmptyStateView.swift */,
+				FF12C231263F4B88003807F8 /* NewPackageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				FF534F4C2636065500C73AA6 /* Persistence.swift in Sources */,
 				FF534F432636065400C73AA6 /* PakejiApp.swift in Sources */,
 				FF534F4F2636065500C73AA6 /* Pakeji.xcdatamodeld in Sources */,
+				FF12C232263F4B88003807F8 /* NewPackageView.swift in Sources */,
 				FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */,
 				FF2720D0263EFBCD00EA3683 /* String+Localizable.swift in Sources */,
 				1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */,
@@ -408,6 +415,7 @@
 				FFC40F69263E667100ED4137 /* PackageEntityServiceTest.swift in Sources */,
 				FF2720DF263F10AC00EA3683 /* PackagesViewTest.swift in Sources */,
 				FF2720BB263EEE3400EA3683 /* PackagesViewModelTest.swift in Sources */,
+				FF12C236263F899C003807F8 /* NewPackageViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

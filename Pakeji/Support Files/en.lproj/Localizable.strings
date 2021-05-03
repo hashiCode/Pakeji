@@ -8,3 +8,9 @@
 
 "packages.navigationView.title" = "Packages";
 "packages.toolbar.totalPackages" = "%d packages.";
+
+"newPackage.title" = "New Package";
+"newPackage.navigation.cancel" = "Cancel";
+"newPackage.navigation.done" = "Done";
+"newPackage.placeholder.name" = "Name";
+"newPackage.placeholder.notes" = "Notes";

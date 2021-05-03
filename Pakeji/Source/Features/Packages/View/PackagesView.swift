@@ -12,12 +12,18 @@ struct PackagesView: View {
     @ObservedObject
     private var viewModel: PackagesViewModel
     
+    @State
+    private var showAddSheet: Bool = false
+    
     init(packagesViewModel: PackagesViewModelProtocol) {
         self.viewModel = packagesViewModel as! PackagesViewModel
+        
+        // Changing TextEditor background to none
+        UITextView.appearance().backgroundColor = .clear
     }
     
     func contentView() -> AnyView {
-        if viewModel.packages.count == 0 {
+        if self.viewModel.packages.count == 0 {
             return AnyView(PackagesEmptyStateView())
         }
 //        TODO implement view to show packages
@@ -31,9 +37,13 @@ struct PackagesView: View {
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {print("add pack")}, label: {
+                        Button(action: {
+                            self.showAddSheet = true
+                        }, label: {
                             Image(systemName: "plus")
-                        })
+                        }).sheet(isPresented: self.$showAddSheet) {
+                            NewPackageView(viewModel: self.viewModel, show: self.$showAddSheet)
+                        }
                     }
                 }
             
@@ -47,6 +57,12 @@ struct PackagesView: View {
     }
 }
 
+struct PackagesView_Previews: PreviewProvider {
+    static var previews: some View {
+        PackagesView(packagesViewModel: PackagesViewModelPreview())
+    }
+}
+
 #if DEBUG
 class PackagesViewModelPreview: PackagesViewModelProtocol {
     
@@ -56,11 +72,4 @@ class PackagesViewModelPreview: PackagesViewModelProtocol {
         
     }
 }
-
-struct PackagesView_Previews: PreviewProvider {
-    static var previews: some View {
-        PackagesView(packagesViewModel: PackagesViewModelPreview())
-    }
-}
-
 #endif
