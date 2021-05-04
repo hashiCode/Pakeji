@@ -26,5 +26,20 @@ class PackagesViewModelTest: XCTestCase {
         XCTAssertTrue(findPackagesIsCalled.0)
         XCTAssertNil(findPackagesIsCalled.1)
     }
+    
+    func testSavePackageCorrectly() {
+        let expectation = XCTestExpectation(description: "View model save package correctly")
+        let name = "package"
+        let notes = "some note"
+        self.sut.savePackage(name: name, notes: notes)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { expectation.fulfill() }
+        
+        wait(for: [expectation], timeout: 1)
+        XCTAssertEqual(1, self.sut.packages.count)
+        let result = self.sut.packages[0]
+        XCTAssertEqual(name, result.name)
+        XCTAssertEqual(notes, result.notes)
+    }
 
 }

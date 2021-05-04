@@ -16,8 +16,8 @@ struct PackagesView: View {
     private var showAddSheet: Bool = false
     
     init(packagesViewModel: PackagesViewModelProtocol) {
-        self.viewModel = packagesViewModel as! PackagesViewModel
-        
+        guard let packagesViewModel = packagesViewModel as? PackagesViewModel else { fatalError("should be instance of PackagesViewModelProtocol") }
+        self.viewModel = packagesViewModel
         // Changing TextEditor background to none
         UITextView.appearance().backgroundColor = .clear
     }
@@ -69,6 +69,10 @@ class PackagesViewModelPreview: PackagesViewModelProtocol {
     var packages: [Package] = []
     
     func findAllPackages() {
+        
+    }
+    
+    func savePackage(name: String, notes: String) {
         
     }
 }

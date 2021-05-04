@@ -14,6 +14,8 @@ protocol PackagesViewModelProtocol {
     
     func findAllPackages()
     
+    func savePackage(name: String, notes: String)
+    
 }
 
 class PackagesViewModel: PackagesViewModelProtocol, ObservableObject{
@@ -33,6 +35,10 @@ class PackagesViewModel: PackagesViewModelProtocol, ObservableObject{
         self.packageEntityService.findPackages(predicate: nil)
     }
     
+    func savePackage(name: String, notes: String) {
+        self.packageEntityService.save(package: Package(name: name, notes: notes))
+    }
+    
 }
 
 extension PackagesViewModel {
@@ -43,6 +49,12 @@ extension PackagesViewModel {
             self.packages = result.map({
                 return Package(id: $0.id, name: $0.name, notes: $0.notes)
             })
+        }.store(in: &anyCancelable)
+        
+        self.packageEntityService.savedPackageSubject.sink { (_) in
+        } receiveValue: { [weak self] (result) in
+            guard let self = self else { return }
+            self.packages.append(Package(id: result.id, name: result.name, notes: result.notes))
         }.store(in: &anyCancelable)
     }
 }
