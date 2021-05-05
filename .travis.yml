@@ -1,7 +1,10 @@
 language: swift
 os: osx
 osx_image: xcode12.2
+install:
+  - gem install slather
 script:
 - xcodebuild clean build test -scheme Pakeji -project Pakeji.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=14.2' CODE_SIGNING_REQUIRED=NO
 after_success:
-- bash <(curl -s https://codecov.io/bash) -J 'Pakeji'
+- slather 
+- bash <(curl -s https://codecov.io/bash) -f ./cobertura.xml

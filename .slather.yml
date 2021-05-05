@@ -1,0 +1,5 @@
+coverage_service: cobertura_xml
+xcodeproj: ./Pakeji.xcodeproj
+scheme: Pakeji
+source_directory: Pakeji/Source
+output_directory: ./
