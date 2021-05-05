@@ -56,24 +56,3 @@ struct PackagesView: View {
         
     }
 }
-
-struct PackagesView_Previews: PreviewProvider {
-    static var previews: some View {
-        PackagesView(packagesViewModel: PackagesViewModelPreview())
-    }
-}
-
-#if DEBUG
-class PackagesViewModelPreview: PackagesViewModelProtocol {
-    
-    var packages: [Package] = []
-    
-    func findAllPackages() {
-        
-    }
-    
-    func savePackage(name: String, notes: String) {
-        
-    }
-}
-#endif

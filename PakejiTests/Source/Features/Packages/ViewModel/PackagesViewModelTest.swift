@@ -22,9 +22,16 @@ class PackagesViewModelTest: XCTestCase {
     }
 
     func testViewModelInitCorrectly() throws {
+        let expectation = XCTestExpectation(description: "View model init correctly")
+        packageEntityService.packagesToFind = [Package(id: UUID.init(), name: "pack", notes: "")]
+        sut = PackagesViewModel(packageEntityService: packageEntityService)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { expectation.fulfill() }
+        wait(for: [expectation], timeout: 1)
         let findPackagesIsCalled = packageEntityService.findPackagesIsCalled
         XCTAssertTrue(findPackagesIsCalled.0)
         XCTAssertNil(findPackagesIsCalled.1)
+        XCTAssertEqual(self.packageEntityService.packagesToFind.count, sut.packages.count)
     }
     
     func testSavePackageCorrectly() {

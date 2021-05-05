@@ -56,8 +56,3 @@ struct NewPackageView: View {
     
 }
 
-struct NewPackageView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewPackageView(viewModel: PackagesViewModel(packageEntityService: PackageEntityServiceImpl()), show: .constant(true))
-    }
-}

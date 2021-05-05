@@ -13,9 +13,3 @@ struct PackagesEmptyStateView: View {
         Text("Empty Packeges View")
     }
 }
-
-struct PackagesEmptyStateView_Previews: PreviewProvider {
-    static var previews: some View {
-        PackagesEmptyStateView()
-    }
-}
