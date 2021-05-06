@@ -45,6 +45,7 @@ struct NewPackageView: View {
                         
                     }), trailing: Button(action: {
                         self.show = false
+                        self.viewModel.savePackage(name: self.name, notes: self.notes)
                     }, label: {
                         Text("newPackage.navigation.done".localized()).bold()
                     }).disabled(self.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)

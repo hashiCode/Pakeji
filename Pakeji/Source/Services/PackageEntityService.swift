@@ -78,7 +78,7 @@ extension PackageEntityServiceImpl {
     
     private func getContext() -> NSManagedObjectContext {
         let persistenceController = PersistenceController.shared
-        let context = persistenceController.container.newBackgroundContext()
+        let context = persistenceController.container.viewContext
         return context
     }
 }

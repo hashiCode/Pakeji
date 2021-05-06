@@ -20,7 +20,7 @@ protocol PackagesViewModelProtocol {
 
 class PackagesViewModel: PackagesViewModelProtocol, ObservableObject{
     
-    @Published private(set) var packages: [Package] = []
+    @Published var packages: [Package] = []
     
     private let packageEntityService: PackageEntityService
     private var anyCancelable = Set<AnyCancellable>()
@@ -43,18 +43,21 @@ class PackagesViewModel: PackagesViewModelProtocol, ObservableObject{
 
 extension PackagesViewModel {
     private func setupSubscriber() {
-        self.packageEntityService.findPackagesSubject.sink { (_) in
-        } receiveValue: { [weak self] (result) in
-            guard let self = self else { return }
-            self.packages = result.map({
-                return Package(id: $0.id, name: $0.name, notes: $0.notes)
-            })
-        }.store(in: &anyCancelable)
+        self.packageEntityService.findPackagesSubject
+            .receive(on: DispatchQueue.main)
+            .sink { (_) in
+            } receiveValue: { [weak self] (result) in
+                guard let self = self else { return }
+                self.packages = result.map { Package(id: $0.id, name: $0.name, notes: $0.notes) }
+            }
+            .store(in: &anyCancelable)
         
-        self.packageEntityService.savedPackageSubject.sink { (_) in
-        } receiveValue: { [weak self] (result) in
-            guard let self = self else { return }
-            self.packages.append(Package(id: result.id, name: result.name, notes: result.notes))
-        }.store(in: &anyCancelable)
+        self.packageEntityService.savedPackageSubject
+            .receive(on: DispatchQueue.main)
+            .sink { (_) in
+            } receiveValue: { [weak self] (result) in
+                guard let self = self else { return }
+                self.packages.append(Package(id: result.id, name: result.name, notes: result.notes))
+            }.store(in: &anyCancelable)
     }
 }

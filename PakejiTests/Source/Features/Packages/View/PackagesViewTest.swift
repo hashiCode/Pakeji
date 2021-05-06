@@ -20,12 +20,23 @@ class PackagesViewTest: XCTestCase {
 
     override func setUpWithError() throws {
         service = PackageEntityServiceMock()
-        viewModel = PackagesViewModel(packageEntityService: service)
+        
         
     }
 
-    func testEmptyView() throws {
+    func testEmptyView() {
+        viewModel = PackagesViewModel(packageEntityService: service)
         sut = PackagesView(packagesViewModel: viewModel)
+        let viewController = UIHostingController(rootView: sut)
+        viewController.view.frame = UIScreen.main.bounds
+        assertSnapshot(matching: viewController, as: .image)
+        
+    }
+    
+    func testViewWithPackages() {
+        self.viewModel = PackagesViewModel(packageEntityService: self.service)
+        self.viewModel.packages = [Package(id: nil, name: "pack1", notes: "")]
+        self.sut = PackagesView(packagesViewModel: self.viewModel)
         let viewController = UIHostingController(rootView: sut)
         viewController.view.frame = UIScreen.main.bounds
         assertSnapshot(matching: viewController, as: .image)

@@ -27,7 +27,7 @@ struct PackagesView: View {
             return AnyView(PackagesEmptyStateView())
         }
 //        TODO implement view to show packages
-        return AnyView(EmptyView())
+        return AnyView(Text("packages count: \(self.viewModel.packages.count)"))
     }
     
     var body: some View {
