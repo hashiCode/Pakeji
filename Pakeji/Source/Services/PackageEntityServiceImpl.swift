@@ -23,8 +23,7 @@ class PackageEntityServiceImpl: PackageEntityService {
         entity.name = package.name
         entity.notes = package.notes
         
-        context.perform { [weak self] in
-            guard let self = self else { return }
+        context.perform {
             do {
                 try context.save()
                 self.savedPackageSubject.send(entity)
@@ -39,8 +38,7 @@ class PackageEntityServiceImpl: PackageEntityService {
         guard let request = PackageEntity.fetchRequest() as?  NSFetchRequest<PackageEntity> else { fatalError("expected to be a kind of NSFetchRequest<PackageEntity>") }
         request.predicate = predicate
         
-        context.perform { [weak self] in
-            guard let self = self else { return }
+        context.perform {
             do {
                 let result = try context.fetch(request)
                 self.findPackagesSubject.send(result)

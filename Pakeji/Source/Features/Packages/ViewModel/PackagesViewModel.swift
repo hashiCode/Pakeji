@@ -43,8 +43,7 @@ extension PackagesViewModel {
     private func setupSubscriber() {
         self.packageEntityService.findPackagesSubject
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] (result) in
-                guard let self = self else { return }
+            .sink {(result) in
                 if let result = result {
                     self.operation = .none
                     self.packages = result.map { Package(id: $0.id, name: $0.name, notes: $0.notes) }
@@ -56,8 +55,7 @@ extension PackagesViewModel {
         
         self.packageEntityService.savedPackageSubject
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] (result) in
-                guard let self = self else { return }
+            .sink {(result) in
                 if let result = result {
                     self.operation = .none
                     self.packages.append(Package(id: result.id, name: result.name, notes: result.notes))
