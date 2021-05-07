@@ -16,8 +16,8 @@ enum PackageEntityServiceError: Error {
 
 protocol PackageEntityService {
     
-    var savedPackageSubject: PassthroughSubject<PackageEntity, PackageEntityServiceError> { get }
-    var findPackagesSubject: PassthroughSubject<[PackageEntity], PackageEntityServiceError> { get }
+    var savedPackageSubject: PassthroughSubject<PackageEntity?, Never> { get }
+    var findPackagesSubject: PassthroughSubject<[PackageEntity]?, Never> { get }
     
     /// Save a package
     /// - Parameter package: package to be saved
@@ -30,55 +30,3 @@ protocol PackageEntityService {
     func findPackages(predicate: NSPredicate?)
 }
 
-class PackageEntityServiceImpl: PackageEntityService {
-    
-    
-    private(set) var savedPackageSubject: PassthroughSubject<PackageEntity, PackageEntityServiceError> = PassthroughSubject()
-    private(set) var findPackagesSubject: PassthroughSubject<[PackageEntity], PackageEntityServiceError> = PassthroughSubject()
-    
-    
-    func save(package: Package) {
-        let context = self.getContext()
-        let entity = PackageEntity(context: context)
-        entity.id = UUID.init()
-        entity.name = package.name
-        entity.notes = package.notes
-        
-        context.perform { [weak self] in
-            guard let self = self else { return }
-            do {
-                try context.save()
-                self.savedPackageSubject.send(entity)
-            } catch {
-                self.savedPackageSubject.send(completion: .failure(PackageEntityServiceError.saveError))
-            }
-        }
-    }
-    
-    func findPackages(predicate: NSPredicate?) {
-        let context = self.getContext()
-        guard let request = PackageEntity.fetchRequest() as?  NSFetchRequest<PackageEntity> else { fatalError("expected to be a kind of NSFetchRequest<PackageEntity>") }
-        request.predicate = predicate
-        
-        context.perform { [weak self] in
-            guard let self = self else { return }
-            do {
-                let result = try context.fetch(request)
-                self.findPackagesSubject.send(result)
-            } catch {
-                self.findPackagesSubject.send(completion: .failure(PackageEntityServiceError.fetchError))
-            }
-            
-        }
-        
-    }
-}
-
-extension PackageEntityServiceImpl {
-    
-    private func getContext() -> NSManagedObjectContext {
-        let persistenceController = PersistenceController.shared
-        let context = persistenceController.container.viewContext
-        return context
-    }
-}

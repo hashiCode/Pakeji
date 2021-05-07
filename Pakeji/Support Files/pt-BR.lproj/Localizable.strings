@@ -15,3 +15,6 @@
 "newPackage.placeholder.name" = "Nome";
 "newPackage.placeholder.notes" = "Notas";
 
+"newPackage.error.title" = "Erro";
+"newPackage.error.descriton" = "Um erro ocorreu ao salvar o pacote";
+"newPackage.error.dismiss" = "Ok";

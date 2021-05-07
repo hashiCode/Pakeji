@@ -17,6 +17,8 @@ class PackagesViewModelPreview: PackagesViewModelProtocol {
     
     var packages: [Package] = []
     
+    var operation : PackagesViewModelOperation = .none
+    
     func findAllPackages() {
         
     }

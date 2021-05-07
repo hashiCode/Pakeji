@@ -22,14 +22,6 @@ struct PackagesView: View {
         UITextView.appearance().backgroundColor = .clear
     }
     
-    func contentView() -> AnyView {
-        if self.viewModel.packages.count == 0 {
-            return AnyView(PackagesEmptyStateView())
-        }
-//        TODO implement view to show packages
-        return AnyView(Text("packages count: \(self.viewModel.packages.count)"))
-    }
-    
     var body: some View {
         NavigationView {
             self.contentView()
@@ -38,13 +30,16 @@ struct PackagesView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-                            self.showAddSheet = true
+                            self.viewModel.operation = .adding
                         }, label: {
                             Image(systemName: "plus")
-                        }).sheet(isPresented: self.$showAddSheet) {
-                            NewPackageView(viewModel: self.viewModel, show: self.$showAddSheet)
-                        }
+                        })
                     }
+                }
+                .sheet(isPresented: Binding<Bool>(get: { self.viewModel.operation == .adding }, set: { _ in }), onDismiss: {
+                    self.viewModel.operation = .none
+                }) {
+                    NewPackageView(viewModel: self.viewModel)
                 }
             
         }
@@ -54,5 +49,13 @@ struct PackagesView: View {
             }
         }
         
+    }
+    
+    private func contentView() -> AnyView {
+        if self.viewModel.packages.count == 0 {
+            return AnyView(PackagesEmptyStateView())
+        }
+//        TODO implement view to show packages
+        return AnyView(Text("packages count: \(self.viewModel.packages.count)"))
     }
 }

@@ -9,6 +9,6 @@ import SwiftUI
 
 struct NewPackageView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPackageView(viewModel: PackagesViewModel(packageEntityService: PackageEntityServiceImpl()), show: .constant(true))
+        NewPackageView(viewModel: PackagesViewModel(packageEntityService: PackageEntityServiceImpl()))
     }
 }

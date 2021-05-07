@@ -14,3 +14,7 @@
 "newPackage.navigation.done" = "Done";
 "newPackage.placeholder.name" = "Name";
 "newPackage.placeholder.notes" = "Notes";
+
+"newPackage.error.title" = "Error";
+"newPackage.error.descriton" = "An error ocurred when saving the package";
+"newPackage.error.dismiss" = "Ok";

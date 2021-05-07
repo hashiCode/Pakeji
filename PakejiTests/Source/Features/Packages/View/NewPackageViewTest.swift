@@ -24,14 +24,24 @@ class NewPackageViewTest: XCTestCase {
     }
 
     func testHaveExpectedInitialApperance() throws {
-        sut = NewPackageView(viewModel: viewModel, show: .constant(true))
+        sut = NewPackageView(viewModel: viewModel)
         let viewController = UIHostingController(rootView: sut)
         viewController.view.frame = UIScreen.main.bounds
         assertSnapshot(matching: viewController, as: .image)
     }
     
-    func testHaveExpectedWhenNameIsInput() throws {
-        sut = NewPackageView(viewModel: viewModel, show: .constant(true), name: "Pack")
+    func testHaveExpectedSnapshotWhenNameIsInput() throws {
+        sut = NewPackageView(viewModel: viewModel, name: "Pack")
+        let viewController = UIHostingController(rootView: sut)
+        viewController.view.frame = UIScreen.main.bounds
+        assertSnapshot(matching: viewController, as: .image)
+    }
+    
+    //TODO resolve alert issue and update this test case
+    func testHaveExpectedSnapshotWhenAnErrorHappens() throws {
+        service.saveWithError = true
+        sut = NewPackageView(viewModel: viewModel, name: "Pack")
+        sut.save()
         let viewController = UIHostingController(rootView: sut)
         viewController.view.frame = UIScreen.main.bounds
         assertSnapshot(matching: viewController, as: .image)

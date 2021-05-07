@@ -15,28 +15,29 @@ class PackageEntityServiceTest: XCTestCase {
     
     var sut: PackageEntityService!
     var anyCancelable = Set<AnyCancellable>()
-
+    
     override func setUpWithError() throws {
         sut = PackageEntityServiceImpl()
     }
-
+    
     override func tearDownWithError() throws {
         self.cleanDB()
     }
-
+    
     func testSavePackage() throws {
         let expectation = XCTestExpectation(description: "Save package correctly")
         let packageToBeSaved = Package(id: nil, name: "test", notes: "some test")
         sut.savedPackageSubject.sink { (_) in
             
         } receiveValue: { (package) in
-            XCTAssertNotNil(package.id)
-                        XCTAssertEqual(package.name, packageToBeSaved.name)
-                        XCTAssertEqual(package.notes, packageToBeSaved.notes)
-                        expectation.fulfill()
+            if let package = package {
+                XCTAssertNotNil(package.id)
+                XCTAssertEqual(package.name, packageToBeSaved.name)
+                XCTAssertEqual(package.notes, packageToBeSaved.notes)
+                expectation.fulfill()
+            }
         }.store(in: &anyCancelable)
         self.sut.save(package: packageToBeSaved)
-        
         wait(for: [expectation], timeout: 3.0)
     }
     
@@ -58,12 +59,14 @@ class PackageEntityServiceTest: XCTestCase {
         sut.findPackagesSubject.sink { (_) in
             
         } receiveValue: { (packages) in
-            XCTAssertEqual(1, packages.count)
-            let packageResult = packages[0]
-            XCTAssertEqual(package.id, packageResult.id)
-            XCTAssertEqual(package.name, packageResult.name)
-            XCTAssertEqual(package.notes, packageResult.notes)
-            expectation.fulfill()
+            if let packages = packages {
+                XCTAssertEqual(1, packages.count)
+                let packageResult = packages[0]
+                XCTAssertEqual(package.id, packageResult.id)
+                XCTAssertEqual(package.name, packageResult.name)
+                XCTAssertEqual(package.notes, packageResult.notes)
+                expectation.fulfill()
+            }
         }.store(in: &anyCancelable)
         
         self.sut.findPackages(predicate: nil)
@@ -94,12 +97,14 @@ class PackageEntityServiceTest: XCTestCase {
         sut.findPackagesSubject.sink { (_) in
             
         } receiveValue: { (packages) in
-            XCTAssertEqual(1, packages.count)
-            let packageResult = packages[0]
-            XCTAssertEqual(package.id, packageResult.id)
-            XCTAssertEqual(package.name, packageResult.name)
-            XCTAssertEqual(package.notes, packageResult.notes)
-            expectation.fulfill()
+            if let packages = packages {
+                XCTAssertEqual(1, packages.count)
+                let packageResult = packages[0]
+                XCTAssertEqual(package.id, packageResult.id)
+                XCTAssertEqual(package.name, packageResult.name)
+                XCTAssertEqual(package.notes, packageResult.notes)
+                expectation.fulfill()
+            }
         }.store(in: &anyCancelable)
         
         self.sut.findPackages(predicate: NSPredicate(format: "name == %@", String(package.name)))
@@ -122,7 +127,7 @@ extension PackageEntityServiceTest {
                 try context.save()
             }
         } catch  {
-           fatalError("Unable to clean db test")
+            fatalError("Unable to clean db test")
         }
     }
 }
