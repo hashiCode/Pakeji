@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Package {
+struct Package: Identifiable {
     var id: UUID?
     var name: String
     var notes: String

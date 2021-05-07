@@ -12,6 +12,10 @@
 		130913D62642313B00A0EE8B /* NewPackageView_Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130913D52642313B00A0EE8B /* NewPackageView_Previews.swift */; };
 		133E73722645919E009C2F20 /* PackageEntityServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E73712645919E009C2F20 /* PackageEntityServiceImpl.swift */; };
 		133E7376264591C2009C2F20 /* PackagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E7375264591C2009C2F20 /* PackagesViewModel.swift */; };
+		133E737A2645B4AD009C2F20 /* PackagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E73792645B4AD009C2F20 /* PackagesListView.swift */; };
+		133E737E2645B4EE009C2F20 /* PackagesListView_Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E737D2645B4EE009C2F20 /* PackagesListView_Previews.swift */; };
+		133E73822645B526009C2F20 /* PackageListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E73812645B526009C2F20 /* PackageListItemView.swift */; };
+		133E73862645B531009C2F20 /* PackageListItemView_Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E73852645B531009C2F20 /* PackageListItemView_Previews.swift */; };
 		1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7092638DCF900DE987B /* PackageEntity.swift */; };
 		1354B7262638E2D900DE987B /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354B7252638E2D900DE987B /* Package.swift */; };
 		FF12C232263F4B88003807F8 /* NewPackageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12C231263F4B88003807F8 /* NewPackageView.swift */; };
@@ -51,6 +55,10 @@
 		130913D52642313B00A0EE8B /* NewPackageView_Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPackageView_Previews.swift; sourceTree = "<group>"; };
 		133E73712645919E009C2F20 /* PackageEntityServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntityServiceImpl.swift; sourceTree = "<group>"; };
 		133E7375264591C2009C2F20 /* PackagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModel.swift; sourceTree = "<group>"; };
+		133E73792645B4AD009C2F20 /* PackagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesListView.swift; sourceTree = "<group>"; };
+		133E737D2645B4EE009C2F20 /* PackagesListView_Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesListView_Previews.swift; sourceTree = "<group>"; };
+		133E73812645B526009C2F20 /* PackageListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListItemView.swift; sourceTree = "<group>"; };
+		133E73852645B531009C2F20 /* PackageListItemView_Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListItemView_Previews.swift; sourceTree = "<group>"; };
 		1354B7092638DCF900DE987B /* PackageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntity.swift; sourceTree = "<group>"; };
 		1354B7252638E2D900DE987B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		FF12C231263F4B88003807F8 /* NewPackageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPackageView.swift; sourceTree = "<group>"; };
@@ -103,6 +111,8 @@
 				130913CB264230DF00A0EE8B /* PackagesView_Previews.swift */,
 				130913D12642311000A0EE8B /* PackagesEmptyStateView_Previews.swift */,
 				130913D52642313B00A0EE8B /* NewPackageView_Previews.swift */,
+				133E737D2645B4EE009C2F20 /* PackagesListView_Previews.swift */,
+				133E73852645B531009C2F20 /* PackageListItemView_Previews.swift */,
 			);
 			path = "Preview Provider";
 			sourceTree = "<group>";
@@ -303,6 +313,8 @@
 				FFDCA68D2636146700B3A36F /* PackagesView.swift */,
 				FF2720EF263F18BC00EA3683 /* PackagesEmptyStateView.swift */,
 				FF12C231263F4B88003807F8 /* NewPackageView.swift */,
+				133E73792645B4AD009C2F20 /* PackagesListView.swift */,
+				133E73812645B526009C2F20 /* PackageListItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -426,12 +438,16 @@
 				FF12C232263F4B88003807F8 /* NewPackageView.swift in Sources */,
 				FFDCA68E2636146700B3A36F /* PackagesView.swift in Sources */,
 				133E73722645919E009C2F20 /* PackageEntityServiceImpl.swift in Sources */,
+				133E737E2645B4EE009C2F20 /* PackagesListView_Previews.swift in Sources */,
 				FF2720D0263EFBCD00EA3683 /* String+Localizable.swift in Sources */,
+				133E73822645B526009C2F20 /* PackageListItemView.swift in Sources */,
 				1354B70A2638DCF900DE987B /* PackageEntity.swift in Sources */,
 				FFC40F5F263E5E8800ED4137 /* PackageEntityService.swift in Sources */,
+				133E737A2645B4AD009C2F20 /* PackagesListView.swift in Sources */,
 				133E7376264591C2009C2F20 /* PackagesViewModel.swift in Sources */,
 				FF2720B3263EEADB00EA3683 /* PackagesViewModelProtocol.swift in Sources */,
 				FF2720F0263F18BC00EA3683 /* PackagesEmptyStateView.swift in Sources */,
+				133E73862645B531009C2F20 /* PackageListItemView_Previews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

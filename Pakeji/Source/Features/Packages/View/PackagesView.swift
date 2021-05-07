@@ -55,7 +55,6 @@ struct PackagesView: View {
         if self.viewModel.packages.count == 0 {
             return AnyView(PackagesEmptyStateView())
         }
-//        TODO implement view to show packages
-        return AnyView(Text("packages count: \(self.viewModel.packages.count)"))
+        return AnyView(PackagesListView(viewModel: self.viewModel))
     }
 }

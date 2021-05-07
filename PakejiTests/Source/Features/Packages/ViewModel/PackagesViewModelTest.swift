@@ -38,7 +38,7 @@ class PackagesViewModelTest: XCTestCase {
     }
     
     func testFindPackagesWithError() {
-        let expectation = XCTestExpectation(description: "View model save package correctly")
+        let expectation = XCTestExpectation(description: "View model find package correctly")
         self.packageEntityService.findWithError = true
         self.sut.findAllPackages()
         
@@ -67,7 +67,7 @@ class PackagesViewModelTest: XCTestCase {
     
     func testSavePackageWithError() {
         self.packageEntityService.saveWithError = true
-        let expectation = XCTestExpectation(description: "View model save package correctly")
+        let expectation = XCTestExpectation(description: "View model save package with error")
         let name = "package"
         let notes = "some note"
         self.sut.savePackage(name: name, notes: notes)

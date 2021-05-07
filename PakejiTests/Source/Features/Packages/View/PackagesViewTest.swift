@@ -20,8 +20,6 @@ class PackagesViewTest: XCTestCase {
 
     override func setUpWithError() throws {
         service = PackageEntityServiceMock()
-        
-        
     }
 
     func testEmptyView() {
@@ -35,7 +33,7 @@ class PackagesViewTest: XCTestCase {
     
     func testViewWithPackages() {
         self.viewModel = PackagesViewModel(packageEntityService: self.service)
-        self.viewModel.packages = [Package(id: nil, name: "pack1", notes: "")]
+        self.viewModel.packages = [Package(id: UUID.init(), name: "pack1", notes: "")]
         self.sut = PackagesView(packagesViewModel: self.viewModel)
         let viewController = UIHostingController(rootView: sut)
         viewController.view.frame = UIScreen.main.bounds
