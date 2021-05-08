@@ -19,7 +19,9 @@ struct PackagesListView: View {
     var body: some View {
         List{
             ForEach(self.viewModel.packages) { package in
-                PackageListItemView(package: package)
+                NavigationLink(destination: Text(package.name)) {
+                    PackageListItemView(package: package)
+                }
             }
         }
         .listStyle(InsetGroupedListStyle())
