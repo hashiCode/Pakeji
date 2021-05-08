@@ -33,20 +33,16 @@ struct PackagesView: View {
                             Image(systemName: "plus")
                         })
                     }
+                    ToolbarItem(placement: .status) {
+                        Text(String(format: "packages.toolbar.totalPackages".localized(), self.viewModel.packages.count))
+                    }
                 }
-                .sheet(isPresented: Binding<Bool>(get: { self.viewModel.operation == .adding }, set: { _ in }), onDismiss: {
-                    self.viewModel.operation = .none
-                }) {
-                    NewPackageView(viewModel: self.viewModel)
-                }
-            
         }
-        .toolbar {
-            ToolbarItem(placement: .status) {
-                Text(String(format: "packages.toolbar.totalPackages".localized(), self.viewModel.packages.count))
-            }
+        .sheet(isPresented: Binding<Bool>(get: { self.viewModel.operation == .adding }, set: { _ in }), onDismiss: {
+            self.viewModel.operation = .none
+        }) {
+            NewPackageView(viewModel: self.viewModel)
         }
-        
     }
     
     private func contentView() -> AnyView {
