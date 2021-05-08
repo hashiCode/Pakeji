@@ -29,9 +29,7 @@ struct PackagesView: View {
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            self.viewModel.operation = .adding
-                        }, label: {
+                        Button(action: self.showAddView, label: {
                             Image(systemName: "plus")
                         })
                     }
@@ -56,5 +54,12 @@ struct PackagesView: View {
             return AnyView(PackagesEmptyStateView())
         }
         return AnyView(PackagesListView(viewModel: self.viewModel))
+    }
+}
+
+extension PackagesView {
+    
+    func showAddView(){
+        self.viewModel.operation = .adding
     }
 }

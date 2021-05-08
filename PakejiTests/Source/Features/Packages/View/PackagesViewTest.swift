@@ -38,7 +38,13 @@ class PackagesViewTest: XCTestCase {
         let viewController = UIHostingController(rootView: sut)
         viewController.view.frame = UIScreen.main.bounds
         assertSnapshot(matching: viewController, as: .image)
-        
+    }
+    
+    func testShowAddUpdateViewModelCorrectly() {
+        viewModel = PackagesViewModel(packageEntityService: service)
+        sut = PackagesView(packagesViewModel: viewModel)
+        sut.showAddView()
+        XCTAssertEqual(PackagesViewModelOperation.adding, viewModel.operation)
     }
 
 }
