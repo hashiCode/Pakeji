@@ -27,14 +27,15 @@ class PackageEntityServiceTest: XCTestCase {
     func testSavePackage() throws {
         let expectation = XCTestExpectation(description: "Save package correctly")
         let packageToBeSaved = Package(id: nil, name: "test", notes: "some test")
-        sut.savedPackageSubject.sink { (_) in
-            
-        } receiveValue: { (package) in
+        sut.savedPackageSubject.sink { (package) in
             if let package = package {
                 XCTAssertNotNil(package.id)
                 XCTAssertEqual(package.name, packageToBeSaved.name)
                 XCTAssertEqual(package.notes, packageToBeSaved.notes)
                 expectation.fulfill()
+            }
+            else {
+                XCTFail("should have save package")
             }
         }.store(in: &anyCancelable)
         self.sut.save(package: packageToBeSaved)
@@ -56,9 +57,7 @@ class PackageEntityServiceTest: XCTestCase {
             XCTFail("problem on test setup")
         }
         
-        sut.findPackagesSubject.sink { (_) in
-            
-        } receiveValue: { (packages) in
+        sut.findPackagesSubject.sink { (packages) in
             if let packages = packages {
                 XCTAssertEqual(1, packages.count)
                 let packageResult = packages[0]
@@ -67,11 +66,14 @@ class PackageEntityServiceTest: XCTestCase {
                 XCTAssertEqual(package.notes, packageResult.notes)
                 expectation.fulfill()
             }
+            else {
+                XCTFail("should have find packages")
+            }
         }.store(in: &anyCancelable)
         
         self.sut.findPackages(predicate: nil)
         
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 1.0)
     }
     
     func testFindPackageGivenPredicate() throws {
@@ -94,9 +96,7 @@ class PackageEntityServiceTest: XCTestCase {
             XCTFail("problem on test setup")
         }
         
-        sut.findPackagesSubject.sink { (_) in
-            
-        } receiveValue: { (packages) in
+        sut.findPackagesSubject.sink { (packages) in
             if let packages = packages {
                 XCTAssertEqual(1, packages.count)
                 let packageResult = packages[0]
@@ -105,11 +105,45 @@ class PackageEntityServiceTest: XCTestCase {
                 XCTAssertEqual(package.notes, packageResult.notes)
                 expectation.fulfill()
             }
+            else {
+                XCTFail("should have find package")
+            }
         }.store(in: &anyCancelable)
         
         self.sut.findPackages(predicate: NSPredicate(format: "name == %@", String(package.name)))
         
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testDeletePackageGivenValidId() throws {
+        let expectation = XCTestExpectation(description: "Delete packages correctly")
+        
+        let context = PersistenceController.shared.container.viewContext
+        let package = PackageEntity(context: context)
+        package.id = UUID.init()
+        package.name = "name"
+        package.notes = "notes"
+        
+        do {
+            try context.save()
+        } catch {
+            XCTFail("problem on test setup")
+        }
+        
+        sut.deletedPackageSubject.sink { (result) in
+            if let result = result {
+                XCTAssertEqual(package.name, result.name)
+                XCTAssertEqual(package.notes, result.notes)
+                XCTAssertEqual(package.id, result.id)
+                expectation.fulfill()
+            } else {
+                XCTFail("should have deleted package")
+            }
+        }.store(in: &anyCancelable)
+        sut.delete(id: package.id)
+        
+        wait(for: [expectation], timeout: 1.0)
+        
     }
     
     

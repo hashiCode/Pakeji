@@ -12,50 +12,59 @@ import Combine
 class PackageEntityServiceImpl: PackageEntityService {
     
     
-    private(set) var savedPackageSubject: PassthroughSubject<PackageEntity?, Never> = PassthroughSubject()
-    private(set) var findPackagesSubject: PassthroughSubject<[PackageEntity]?, Never> = PassthroughSubject()
+    private(set) var savedPackageSubject: PassthroughSubject<Package?, Never> = PassthroughSubject()
+    private(set) var findPackagesSubject: PassthroughSubject<[Package]?, Never> = PassthroughSubject()
+    private(set) var deletedPackageSubject: PassthroughSubject<Package?, Never> = PassthroughSubject()
     
     
     func save(package: Package) {
-        let context = self.getContext()
-        let entity = PackageEntity(context: context)
-        entity.id = UUID.init()
-        entity.name = package.name
-        entity.notes = package.notes
-        
-        context.perform {
+        PersistenceController.shared.container.performBackgroundTask({ (backgroundContext) in
+            let entity = PackageEntity(context: backgroundContext)
+            entity.id = UUID.init()
+            entity.name = package.name
+            entity.notes = package.notes
             do {
-                try context.save()
-                self.savedPackageSubject.send(entity)
+                try backgroundContext.save()
+                self.savedPackageSubject.send(entity.convertToModel())
             } catch {
                 self.savedPackageSubject.send(nil)
             }
-        }
+        })
     }
     
     func findPackages(predicate: NSPredicate?) {
-        let context = self.getContext()
         guard let request = PackageEntity.fetchRequest() as?  NSFetchRequest<PackageEntity> else { fatalError("expected to be a kind of NSFetchRequest<PackageEntity>") }
         request.predicate = predicate
         
-        context.perform {
+        PersistenceController.shared.container.performBackgroundTask({ (backgroundContext) in
             do {
-                let result = try context.fetch(request)
-                self.findPackagesSubject.send(result)
+                let result = try backgroundContext.fetch(request)
+                self.findPackagesSubject.send(result.map({$0.convertToModel()}))
             } catch {
                 self.findPackagesSubject.send(nil)
             }
             
-        }
-        
+        })
     }
-}
-
-extension PackageEntityServiceImpl {
     
-    private func getContext() -> NSManagedObjectContext {
-        let persistenceController = PersistenceController.shared
-        let context = persistenceController.container.viewContext
-        return context
+    func delete(id: UUID) {
+        guard let request = PackageEntity.fetchRequest() as?  NSFetchRequest<PackageEntity> else { fatalError("expected to be a kind of NSFetchRequest<PackageEntity>") }
+        request.predicate = NSPredicate(format: "id == %@", "\(id)")
+        
+        PersistenceController.shared.container.performBackgroundTask({ (backgroundContext) in
+            do {
+                let result = try backgroundContext.fetch(request)
+                if !result.isEmpty {
+                    let packageToBeDeleted = result[0].convertToModel()
+                    backgroundContext.delete(result[0])
+                    try backgroundContext.save()
+                    self.deletedPackageSubject.send(packageToBeDeleted)
+                } else {
+                    self.deletedPackageSubject.send(nil)
+                }
+            } catch {
+                self.deletedPackageSubject.send(nil)
+            }
+        })
     }
 }

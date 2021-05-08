@@ -16,8 +16,9 @@ enum PackageEntityServiceError: Error {
 
 protocol PackageEntityService {
     
-    var savedPackageSubject: PassthroughSubject<PackageEntity?, Never> { get }
-    var findPackagesSubject: PassthroughSubject<[PackageEntity]?, Never> { get }
+    var savedPackageSubject: PassthroughSubject<Package?, Never> { get }
+    var findPackagesSubject: PassthroughSubject<[Package]?, Never> { get }
+    var deletedPackageSubject: PassthroughSubject<Package?, Never> { get }
     
     /// Save a package
     /// - Parameter package: package to be saved
@@ -28,5 +29,11 @@ protocol PackageEntityService {
     /// - Parameter predicate: an optional predicate
     /// It will pusblish the result on findPackagesSubject subject
     func findPackages(predicate: NSPredicate?)
+    
+    
+    /// delete a package given an id
+    /// - Parameter id: id of package
+    /// It will publish the deleted pack on deletedPackageSubject. It will publish nill if it was not possible to delete
+    func delete(id: UUID)
 }
 

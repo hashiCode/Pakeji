@@ -15,3 +15,9 @@ final class PackageEntity: NSManagedObject {
     @NSManaged var notes: String
     
 }
+
+extension PackageEntity {
+    func convertToModel() -> Package {
+        return Package(id: self.id, name: self.name, notes: self.notes)
+    }
+}
