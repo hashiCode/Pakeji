@@ -17,9 +17,11 @@ class PackageEntityServiceMock: PackageEntityService {
     
     var packagesToFind: [Package] = []
     private(set)var findPackagesIsCalled: (Bool, NSPredicate?) = (false, nil)
+    var packageToBeDeleted: Package?
     
     var saveWithError = false
     var findWithError = false
+    var deleteWithError = false
     
     func save(package: Package) {
         if !saveWithError {
@@ -42,7 +44,12 @@ class PackageEntityServiceMock: PackageEntityService {
     }
     
     func delete(id: UUID) {
-        
+        if !deleteWithError {
+            self.deletedPackageSubject.send(packageToBeDeleted)
+        }
+        else {
+            self.deletedPackageSubject.send(nil)
+        }
     }
     
 }

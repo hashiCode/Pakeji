@@ -27,5 +27,9 @@ class PackagesViewModelPreview: PackagesViewModelProtocol {
     func savePackage(name: String, notes: String) {
         
     }
+    
+    func deletePackage(indexSet: IndexSet) {
+        
+    }
 }
 #endif

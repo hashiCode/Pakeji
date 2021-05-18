@@ -23,6 +23,9 @@ struct PackagesListView: View {
                     PackageListItemView(package: package)
                 }
             }
+            .onDelete { (index) in
+                self.viewModel.deletePackage(indexSet: index)
+            }
         }
         .listStyle(InsetGroupedListStyle())
         

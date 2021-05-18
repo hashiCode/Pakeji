@@ -37,6 +37,14 @@ class PackagesViewModel: PackagesViewModelProtocol, ObservableObject{
         self.packageEntityService.save(package: Package(name: name, notes: notes))
     }
     
+    func deletePackage(indexSet: IndexSet) {
+        indexSet.forEach { (index) in
+            let package = self.packages[index]
+            if let id = package.id {
+                self.packageEntityService.delete(id: id)
+            }
+        }
+    }
 }
 
 extension PackagesViewModel {
@@ -63,7 +71,22 @@ extension PackagesViewModel {
                     self.operation = .error
                 }
             }
-
+            .store(in: &anyCancelable)
+        
+        self.packageEntityService.deletedPackageSubject
+            .receive(on: DispatchQueue.main)
+            .sink {(result) in
+                if let result = result {
+                    self.operation = .none
+                    if let index = self.packages.firstIndex(where: { (package) -> Bool in
+                        result.id == package.id
+                    }) {
+                        self.packages.remove(at: index)
+                    }
+                } else {
+                    self.operation = .error
+                }
+            }
             .store(in: &anyCancelable)
     }
 }

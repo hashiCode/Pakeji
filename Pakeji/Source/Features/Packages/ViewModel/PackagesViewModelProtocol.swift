@@ -25,4 +25,6 @@ protocol PackagesViewModelProtocol {
     
     func savePackage(name: String, notes: String)
     
+    func deletePackage(indexSet: IndexSet)
+    
 }

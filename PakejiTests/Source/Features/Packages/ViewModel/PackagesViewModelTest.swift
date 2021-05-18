@@ -12,7 +12,7 @@ import Combine
 
 class PackagesViewModelTest: XCTestCase {
     
-    var sut: PackagesViewModelProtocol!
+    var sut: PackagesViewModel!
     var packageEntityService: PackageEntityServiceMock!
 
     override func setUpWithError() throws {
@@ -78,5 +78,26 @@ class PackagesViewModelTest: XCTestCase {
         XCTAssertEqual(0, self.sut.packages.count)
         XCTAssertEqual(PackagesViewModelOperation.error, self.sut.operation)
     }
+    
+    func testDeletePackage() {
+        let package = Package(id: UUID.init(), name: "pack", notes: "")
+        self.sut.add(package)
+        self.packageEntityService.packageToBeDeleted = package
+        let expectation = XCTestExpectation(description: "View model delete package correctly")
+        self.sut.deletePackage(indexSet: IndexSet(integersIn: 0...0))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { expectation.fulfill() }
+        
+        wait(for: [expectation], timeout: 1)
+        XCTAssertEqual(0, self.sut.packages.count)
+        XCTAssertEqual(PackagesViewModelOperation.none, self.sut.operation)
+    }
 
+}
+
+extension PackagesViewModel {
+    
+    func add(_ package: Package) {
+        self.packages.append(package)
+    }
 }
